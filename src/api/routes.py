@@ -57,14 +57,11 @@ def login():
 
     user = User.query.filter_by(email=auth.username).first()
 
-    if not user:
+    if not user or not bcrypt.check_password_hash(user.password, auth.password):
         raise APIException('Could not verify', status_code=401, headers={'WWW-Authenticate': 'Basic realm="Login required!"'})
 
     if not user.is_active:
         raise APIException('User is inactive', status_code=401)
-
-    if not bcrypt.check_password_hash(user.password, auth.password):
-        raise APIException('Could not verify', status_code=401, headers={'WWW-Authenticate': 'Basic realm="Login required!"'})
 
     access_token = jwt.encode({'id': user.id, 'email': user.email}, app.config['JWT_SECRET_KEY'])
     return jsonify({'access_token': access_token.decode('UTF-8')}), 200
