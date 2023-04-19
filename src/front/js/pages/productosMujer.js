@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {AiFillStar, AiOutlineStar, AiOutlineHeart} from "react-icons/ai"
+import { AiFillStar, AiOutlineStar, AiOutlineHeart } from "react-icons/ai"
 
 export const ProductosMujer = () => {
     const [isPolera, setIsPolera] = useState(false);
@@ -16,41 +16,41 @@ export const ProductosMujer = () => {
     const [isPanty, setIsPanty] = useState(false);
 
     const turnRating = (rating) => {
-        if(rating === 1){
-            return(<><AiFillStar /><AiOutlineStar /><AiOutlineStar /><AiOutlineStar /><AiOutlineStar /></>)
-        } else if(rating === 2){
-            return(<><AiFillStar /><AiFillStar /><AiOutlineStar /><AiOutlineStar /><AiOutlineStar /></>)
-        } else if(rating === 3){
-            return(<><AiFillStar /><AiFillStar /><AiFillStar /><AiOutlineStar /><AiOutlineStar /></>)
-        } else if(rating === 4){
-            return(<><AiFillStar /><AiFillStar /><AiFillStar /><AiFillStar /><AiOutlineStar /></>)
+        if (rating === 1) {
+            return (<><AiFillStar /><AiOutlineStar /><AiOutlineStar /><AiOutlineStar /><AiOutlineStar /></>)
+        } else if (rating === 2) {
+            return (<><AiFillStar /><AiFillStar /><AiOutlineStar /><AiOutlineStar /><AiOutlineStar /></>)
+        } else if (rating === 3) {
+            return (<><AiFillStar /><AiFillStar /><AiFillStar /><AiOutlineStar /><AiOutlineStar /></>)
+        } else if (rating === 4) {
+            return (<><AiFillStar /><AiFillStar /><AiFillStar /><AiFillStar /><AiOutlineStar /></>)
         } else {
-            return(<><AiFillStar /><AiFillStar /><AiFillStar /><AiFillStar /><AiFillStar /></>)
+            return (<><AiFillStar /><AiFillStar /><AiFillStar /><AiFillStar /><AiFillStar /></>)
         }
     }
 
     const turnIntoClass = (item) => {
-        if(item.category === "Polera"){
+        if (item.category === "Polera") {
             return (isPolera ? ("col") : ("col d-none"))
-        } else if(item.category === "Poleron"){
+        } else if (item.category === "Poleron") {
             return (isPoleron ? ("col") : ("col d-none"))
-        } else if(item.category === "Pantalon"){
+        } else if (item.category === "Pantalon") {
             return (isPantalon ? ("col") : ("col d-none"))
-        } else if(item.category === "Jeans"){
+        } else if (item.category === "Jeans") {
             return (isJeans ? ("col") : ("col d-none"))
-        } else if(item.category === "Falda"){
+        } else if (item.category === "Falda") {
             return (isFalda ? ("col") : ("col d-none"))
-        } else if(item.category === "Cartera"){
+        } else if (item.category === "Cartera") {
             return (isCartera ? ("col") : ("col d-none"))
-        } else if(item.category === "Billetera"){
+        } else if (item.category === "Billetera") {
             return (isBilletera ? ("col") : ("col d-none"))
-        } else if(item.category === "Cinturon"){
+        } else if (item.category === "Cinturon") {
             return (isCinturon ? ("col") : ("col d-none"))
-        } else if(item.category === "Pañuelo"){
+        } else if (item.category === "Pañuelo") {
             return (isPañuelo ? ("col") : ("col d-none"))
-        } else if(item.category === "Calzon"){
+        } else if (item.category === "Calzon") {
             return (isCalzon ? ("col") : ("col d-none"))
-        } else if(item.category === "Sosten"){
+        } else if (item.category === "Sosten") {
             return (isSosten ? ("col") : ("col d-none"))
         } else {
             return (isPanty ? ("col") : ("col d-none"))
@@ -170,108 +170,214 @@ export const ProductosMujer = () => {
 
     //const [productos, setProductos] = useState(categories)
 
-    return (
-        <div className="m-0 p-0 my-2">
-            <div className="mx-4">
-                <div className="row">
-                    <div className="col-3 border border-success">
-                        <h3>Ropa Mujer</h3>
-                        <h5>Tipo de prenda</h5>
-                        <div className="form-check">
-                            <input className="form-check-input" type="checkbox" value="" id="prenda1" onClick={() => setIsPolera(!isPolera)} />
-                            <label className="form-check-label" htmlFor="prenda1">
-                                Poleras
-                            </label>
+    if (!isPolera && !isPoleron && !isPantalon && !isJeans && !isFalda && !isCartera && !isBilletera && !isCinturon && !isPañuelo && !isCalzon && !isSosten && !isPanty) {
+        return (
+            <div className="m-0 p-0 my-2">
+                <div className="mx-4">
+                    <div className="row">
+                        <div className="col-3 border border-success">
+                            <h3>Ropa Mujer</h3>
+                            <h5>Tipo de prenda</h5>
+                            <div className="form-check">
+                                <input className="form-check-input" type="checkbox" value="" id="prenda1" onClick={() => setIsPolera(!isPolera)} />
+                                <label className="form-check-label" htmlFor="prenda1">
+                                    Poleras
+                                </label>
+                            </div>
+                            <div className="form-check">
+                                <input className="form-check-input" type="checkbox" value="" id="prenda2" onClick={() => setIsPoleron(!isPoleron)} />
+                                <label className="form-check-label" htmlFor="prenda2">
+                                    Polerones/Sweaters
+                                </label>
+                            </div>
+                            <div className="form-check">
+                                <input className="form-check-input" type="checkbox" value="" id="prenda3" onClick={() => setIsPantalon(!isPantalon)} />
+                                <label className="form-check-label" htmlFor="prenda3">
+                                    Pantalones
+                                </label>
+                            </div>
+                            <div className="form-check">
+                                <input className="form-check-input" type="checkbox" value="" id="prenda4" onClick={() => setIsJeans(!isJeans)} />
+                                <label className="form-check-label" htmlFor="prenda4">
+                                    Jeans
+                                </label>
+                            </div>
+                            <div className="form-check">
+                                <input className="form-check-input" type="checkbox" value="" id="prenda5" onClick={() => setIsFalda(!isFalda)} />
+                                <label className="form-check-label" htmlFor="prenda5">
+                                    Faldas/Vestidos
+                                </label>
+                            </div>
+                            <h5>Accesorios</h5>
+                            <div className="form-check">
+                                <input className="form-check-input" type="checkbox" value="" id="accesorio1" onClick={() => setIsCartera(!isCartera)} />
+                                <label className="form-check-label" htmlFor="accesorio1">
+                                    Carteras
+                                </label>
+                            </div>
+                            <div className="form-check">
+                                <input className="form-check-input" type="checkbox" value="" id="accesorio2" onClick={() => setIsBilletera(!isBilletera)} />
+                                <label className="form-check-label" htmlFor="accesorio2">
+                                    Billeteras
+                                </label>
+                            </div>
+                            <div className="form-check">
+                                <input className="form-check-input" type="checkbox" value="" id="accesorio3" onClick={() => setIsCinturon(!isCinturon)} />
+                                <label className="form-check-label" htmlFor="accesorio3">
+                                    Cinturones
+                                </label>
+                            </div>
+                            <div className="form-check">
+                                <input className="form-check-input" type="checkbox" value="" id="accesorio4" onClick={() => setIsPañuelo(!isPañuelo)} />
+                                <label className="form-check-label" htmlFor="accesorio4">
+                                    Pañuelos/Bufandas
+                                </label>
+                            </div>
+                            <h5>Ropa interior</h5>
+                            <div className="form-check">
+                                <input className="form-check-input" type="checkbox" value="" id="interior1" onClick={() => setIsCalzon(!isCalzon)} />
+                                <label className="form-check-label" htmlFor="interior1">
+                                    Calzones
+                                </label>
+                            </div>
+                            <div className="form-check">
+                                <input className="form-check-input" type="checkbox" value="" id="interior2" onClick={() => setIsSosten(!isSosten)} />
+                                <label className="form-check-label" htmlFor="interior2">
+                                    Sostenes
+                                </label>
+                            </div>
+                            <div className="form-check">
+                                <input className="form-check-input" type="checkbox" value="" id="interior3" onClick={() => setIsPanty(!isPanty)} />
+                                <label className="form-check-label" htmlFor="interior3">
+                                    Pantys/Calcetines
+                                </label>
+                            </div>
                         </div>
-                        <div className="form-check">
-                            <input className="form-check-input" type="checkbox" value="" id="prenda2" onClick={() => setIsPoleron(!isPoleron)} />
-                            <label className="form-check-label" htmlFor="prenda2">
-                                Polerones/Sweaters
-                            </label>
-                        </div>
-                        <div className="form-check">
-                            <input className="form-check-input" type="checkbox" value="" id="prenda3" onClick={() => setIsPantalon(!isPantalon)} />
-                            <label className="form-check-label" htmlFor="prenda3">
-                                Pantalones
-                            </label>
-                        </div>
-                        <div className="form-check">
-                            <input className="form-check-input" type="checkbox" value="" id="prenda4" onClick={() => setIsJeans(!isJeans)} />
-                            <label className="form-check-label" htmlFor="prenda4">
-                                Jeans
-                            </label>
-                        </div>
-                        <div className="form-check">
-                            <input className="form-check-input" type="checkbox" value="" id="prenda5" onClick={() => setIsFalda(!isFalda)} />
-                            <label className="form-check-label" htmlFor="prenda5">
-                                Faldas/Vestidos
-                            </label>
-                        </div>
-                        <h5>Accesorios</h5>
-                        <div className="form-check">
-                            <input className="form-check-input" type="checkbox" value="" id="accesorio1" onClick={() => setIsCartera(!isCartera)} />
-                            <label className="form-check-label" htmlFor="accesorio1">
-                                Carteras
-                            </label>
-                        </div>
-                        <div className="form-check">
-                            <input className="form-check-input" type="checkbox" value="" id="accesorio2" onClick={() => setIsBilletera(!isBilletera)} />
-                            <label className="form-check-label" htmlFor="accesorio2">
-                                Billeteras
-                            </label>
-                        </div>
-                        <div className="form-check">
-                            <input className="form-check-input" type="checkbox" value="" id="accesorio3" onClick={() => setIsCinturon(!isCinturon)} />
-                            <label className="form-check-label" htmlFor="accesorio3">
-                                Cinturones
-                            </label>
-                        </div>
-                        <div className="form-check">
-                            <input className="form-check-input" type="checkbox" value="" id="accesorio4" onClick={() => setIsPañuelo(!isPañuelo)} />
-                            <label className="form-check-label" htmlFor="accesorio4">
-                                Pañuelos/Bufandas
-                            </label>
-                        </div>
-                        <h5>Ropa interior</h5>
-                        <div className="form-check">
-                            <input className="form-check-input" type="checkbox" value="" id="interior1" onClick={() => setIsCalzon(!isCalzon)} />
-                            <label className="form-check-label" htmlFor="interior1">
-                                Calzones
-                            </label>
-                        </div>
-                        <div className="form-check">
-                            <input className="form-check-input" type="checkbox" value="" id="interior2" onClick={() => setIsSosten(!isSosten)} />
-                            <label className="form-check-label" htmlFor="interior2">
-                                Sostenes
-                            </label>
-                        </div>
-                        <div className="form-check">
-                            <input className="form-check-input" type="checkbox" value="" id="interior3" onClick={() => setIsPanty(!isPanty)} />
-                            <label className="form-check-label" htmlFor="interior3">
-                                Pantys/Calcetines
-                            </label>
-                        </div>
-                    </div>
-                    <div className="col-9 border border-primary container-fluid">
-                        <div className="row row-cols-xm-1 row-cols-sm-2 row-cols-md-3 g-4">
-                            {categories.map((item, index) => (
-                                <div className={turnIntoClass(item)} key={index}>
-                                    <div className="card" style={{ width: "18rem" }}>
-                                        <img src={item.image} className="card-img-top" />
-                                        <div className="card-body">
-                                            <h3 className="card-title">{item.title}</h3>
-                                            <span className="card-text fs-4">${item.price}</span><span className="card-text float-end icon-color fs-4"><AiOutlineHeart /></span><br />
-                                            <span className="card-text icon-color fs-4">{turnRating(item.rating, item.votes)}</span><span className="card-text fs-4">({item.votes})</span><br />
-                                            <button type="button" className="btn btn-lg w-100 text-light button-color">Agreagar al carrito</button>
+                        <div className="col-9 border border-primary container-fluid">
+                            <div className="row row-cols-xm-1 row-cols-sm-2 row-cols-md-3 g-4">
+                                {categories.map((item, index) => (
+                                    <div className="col" key={index}>
+                                        <div className="card" style={{ width: "18rem" }}>
+                                            <img src={item.image} className="card-img-top" />
+                                            <div className="card-body">
+                                                <h3 className="card-title">{item.title}</h3>
+                                                <span className="card-text fs-4">${item.price}</span><span className="card-text float-end icon-color fs-4"><AiOutlineHeart /></span><br />
+                                                <span className="card-text icon-color fs-4">{turnRating(item.rating, item.votes)}</span><span className="card-text fs-4">({item.votes})</span><br />
+                                                <button type="button" className="btn btn-lg w-100 text-light button-color">Agreagar al carrito</button>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    )
+        )
+    } else {
+        return (
+            <div className="m-0 p-0 my-2">
+                <div className="mx-4">
+                    <div className="row">
+                        <div className="col-3 border border-success">
+                            <h3>Ropa Mujer</h3>
+                            <h5>Tipo de prenda</h5>
+                            <div className="form-check">
+                                <input className="form-check-input" type="checkbox" value="" id="prenda1" onClick={() => setIsPolera(!isPolera)} />
+                                <label className="form-check-label" htmlFor="prenda1">
+                                    Poleras
+                                </label>
+                            </div>
+                            <div className="form-check">
+                                <input className="form-check-input" type="checkbox" value="" id="prenda2" onClick={() => setIsPoleron(!isPoleron)} />
+                                <label className="form-check-label" htmlFor="prenda2">
+                                    Polerones/Sweaters
+                                </label>
+                            </div>
+                            <div className="form-check">
+                                <input className="form-check-input" type="checkbox" value="" id="prenda3" onClick={() => setIsPantalon(!isPantalon)} />
+                                <label className="form-check-label" htmlFor="prenda3">
+                                    Pantalones
+                                </label>
+                            </div>
+                            <div className="form-check">
+                                <input className="form-check-input" type="checkbox" value="" id="prenda4" onClick={() => setIsJeans(!isJeans)} />
+                                <label className="form-check-label" htmlFor="prenda4">
+                                    Jeans
+                                </label>
+                            </div>
+                            <div className="form-check">
+                                <input className="form-check-input" type="checkbox" value="" id="prenda5" onClick={() => setIsFalda(!isFalda)} />
+                                <label className="form-check-label" htmlFor="prenda5">
+                                    Faldas/Vestidos
+                                </label>
+                            </div>
+                            <h5>Accesorios</h5>
+                            <div className="form-check">
+                                <input className="form-check-input" type="checkbox" value="" id="accesorio1" onClick={() => setIsCartera(!isCartera)} />
+                                <label className="form-check-label" htmlFor="accesorio1">
+                                    Carteras
+                                </label>
+                            </div>
+                            <div className="form-check">
+                                <input className="form-check-input" type="checkbox" value="" id="accesorio2" onClick={() => setIsBilletera(!isBilletera)} />
+                                <label className="form-check-label" htmlFor="accesorio2">
+                                    Billeteras
+                                </label>
+                            </div>
+                            <div className="form-check">
+                                <input className="form-check-input" type="checkbox" value="" id="accesorio3" onClick={() => setIsCinturon(!isCinturon)} />
+                                <label className="form-check-label" htmlFor="accesorio3">
+                                    Cinturones
+                                </label>
+                            </div>
+                            <div className="form-check">
+                                <input className="form-check-input" type="checkbox" value="" id="accesorio4" onClick={() => setIsPañuelo(!isPañuelo)} />
+                                <label className="form-check-label" htmlFor="accesorio4">
+                                    Pañuelos/Bufandas
+                                </label>
+                            </div>
+                            <h5>Ropa interior</h5>
+                            <div className="form-check">
+                                <input className="form-check-input" type="checkbox" value="" id="interior1" onClick={() => setIsCalzon(!isCalzon)} />
+                                <label className="form-check-label" htmlFor="interior1">
+                                    Calzones
+                                </label>
+                            </div>
+                            <div className="form-check">
+                                <input className="form-check-input" type="checkbox" value="" id="interior2" onClick={() => setIsSosten(!isSosten)} />
+                                <label className="form-check-label" htmlFor="interior2">
+                                    Sostenes
+                                </label>
+                            </div>
+                            <div className="form-check">
+                                <input className="form-check-input" type="checkbox" value="" id="interior3" onClick={() => setIsPanty(!isPanty)} />
+                                <label className="form-check-label" htmlFor="interior3">
+                                    Pantys/Calcetines
+                                </label>
+                            </div>
+                        </div>
+                        <div className="col-9 border border-primary container-fluid">
+                            <div className="row row-cols-xm-1 row-cols-sm-2 row-cols-md-3 g-4">
+                                {categories.map((item, index) => (
+                                    <div className={turnIntoClass(item)} key={index}>
+                                        <div className="card" style={{ width: "18rem" }}>
+                                            <img src={item.image} className="card-img-top" />
+                                            <div className="card-body">
+                                                <h3 className="card-title">{item.title}</h3>
+                                                <span className="card-text fs-4">${item.price}</span><span className="card-text float-end icon-color fs-4"><AiOutlineHeart /></span><br />
+                                                <span className="card-text icon-color fs-4">{turnRating(item.rating, item.votes)}</span><span className="card-text fs-4">({item.votes})</span><br />
+                                                <button type="button" className="btn btn-lg w-100 text-light button-color">Agreagar al carrito</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        )
+    }
 }
 
